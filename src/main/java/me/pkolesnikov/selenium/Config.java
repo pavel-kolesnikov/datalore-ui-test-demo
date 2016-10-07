@@ -15,8 +15,12 @@ final class Config {
         try (final FileInputStream source = new FileInputStream(path.toFile())) {
             cfg.load(source);
         } catch (FileNotFoundException e) {
-            System.err.println(format("No config file found in '{0}'", path));
-            System.err.println(format("Writing example config file to '{0}'", path));
+            // to log into logging is better, but I dont want a ton of dependencies in this project by now
+            System.err.println();
+            System.err.println(format(">>> Error: No config file found in {0}", path));
+            System.err.println(format(">>> Writing example config file to {0}", path));
+            System.err.println();
+
             try (FileOutputStream out = new FileOutputStream(path.toFile())) {
                 cfg.put("user", "user@example.com");
                 cfg.put("pass", "super-secret-password");

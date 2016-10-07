@@ -1,2 +1,2 @@
-# datalore-ui-test-demo
-datalore-ui-test-demo
+# datalore.io UI test demo
+The UI test demo project for JetBrains' Datalore.io.
